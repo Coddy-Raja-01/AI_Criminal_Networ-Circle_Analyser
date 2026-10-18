@@ -30,6 +30,14 @@ Then open `http://localhost:5173`.
 
 GitHub stores the source code but does not run Docker Compose, FastAPI, or PostgreSQL. Deploy the stack to a Docker-capable host such as Railway, Render, Azure, Fly.io, or a private server. Keep the frontend and backend together behind the Nginx proxy in `frontend/` so `API_KEY` remains server-side.
 
+### Deploy on Render
+
+1. Push this repository to GitHub and create a **Blueprint** in Render using the repository's `render.yaml`.
+2. Review and apply the Blueprint. It creates a PostgreSQL database, a FastAPI web service, and an Nginx-served frontend. Render generates the API key and shares it with the frontend proxy without exposing it to browser code.
+3. Open the frontend service's `onrender.com` URL. The backend's `/health` endpoint is configured for health checks.
+
+The Blueprint uses Render's free plans for a demo deployment. Free web services may spin down when idle, and a free PostgreSQL database expires after 30 days. Select paid plans in `render.yaml` before applying if you need continuously available services or durable production data.
+
 Configure these variables in the deployment provider's secret/environment settings. Do not paste this block into PowerShell; it is a list of dashboard variable names and values:
 
 ```text

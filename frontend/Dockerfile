@@ -17,6 +17,6 @@ COPY nginx.conf /etc/nginx/templates/default.conf.template
 COPY docker-entrypoint.d/40-api-key.sh /docker-entrypoint.d/40-api-key.sh
 RUN chmod +x /docker-entrypoint.d/40-api-key.sh
 
-EXPOSE 80
+EXPOSE 10000
 
 CMD ["nginx", "-g", "daemon off;"]

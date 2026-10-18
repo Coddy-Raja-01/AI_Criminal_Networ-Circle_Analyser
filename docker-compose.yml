@@ -39,6 +39,8 @@ services:
     container_name: sih_frontend
     environment:
       - API_KEY=${API_KEY:?API_KEY must be set to a random secret}
+      - BACKEND_URL=http://backend:8000
+      - PORT=80
     restart: always
     ports:
       - "8080:80"
