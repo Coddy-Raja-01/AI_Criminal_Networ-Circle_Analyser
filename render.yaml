@@ -19,11 +19,6 @@ services:
           property: connectionString
       - key: API_KEY
         generateValue: true
-      - key: PUBLIC_URL
-        fromService:
-          type: web
-          name: bharat-securex-api
-          envVarKey: RENDER_EXTERNAL_URL
       - key: CORS_ALLOWED_ORIGINS
         value: https://bharat-securex-frontend.onrender.com
       - key: PYTHONUNBUFFERED
@@ -42,7 +37,4 @@ services:
           name: bharat-securex-api
           envVarKey: API_KEY
       - key: BACKEND_URL
-        fromService:
-          type: web
-          name: bharat-securex-api
-          envVarKey: PUBLIC_URL
+        value: https://bharat-securex-api.onrender.com
