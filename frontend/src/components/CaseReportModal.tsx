@@ -58,7 +58,7 @@ export const CaseReportModal: React.FC<CaseReportModalProps> = ({
           <div className="border-b-2 border-red-500/80 pb-4">
             <div className="flex items-center justify-between mb-2">
               <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-red-950 text-red-300 border border-red-700 font-mono">
-                CONFIDENTIAL // LAW ENFORCEMENT INTELLIGENCE (SIH26189)
+                CONFIDENTIAL // LAW ENFORCEMENT INTELLIGENCE
               </span>
               <span className="text-xs font-mono text-zinc-400">
                 DATE: {new Date().toLocaleDateString('en-GB')}

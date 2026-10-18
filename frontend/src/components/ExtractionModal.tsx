@@ -136,7 +136,7 @@ export const ExtractionModal: React.FC<ExtractionModalProps> = ({
                 Multi-Source Intelligence Ingestion Pipeline
               </h2>
               <p className="text-[11px] text-zinc-400">
-                Targeted for SIH26189: Ingest unstructured reports, CDR call logs, or financial transaction books.
+                Add reports, call logs, or financial transaction files.
               </p>
             </div>
           </div>

@@ -22,11 +22,11 @@ export const KeyIndividuals: React.FC<KeyIndividualsProps> = ({
         <div className="flex items-center gap-2">
           <Target className="w-4 h-4 text-purple-400" />
           <h2 className="text-xs font-bold uppercase tracking-wider text-zinc-200">
-            Key Individuals (Centrality Ranking)
+            People to Review
           </h2>
         </div>
         <span className="text-[11px] font-mono text-zinc-400">
-          Top {individuals.length} Targets
+          {individuals.length} people
         </span>
       </div>
 

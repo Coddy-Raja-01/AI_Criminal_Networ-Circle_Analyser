@@ -229,6 +229,12 @@ export const GraphView: React.FC<GraphViewProps> = ({
         </div>
       </div>
 
+      {nodes.length > 0 && (
+        <div className="absolute top-16 left-3 z-10 rounded-md border border-zinc-800/80 bg-zinc-900/85 px-2.5 py-1.5 text-[11px] text-zinc-300 shadow-lg backdrop-blur-md">
+          Select a node to explore its connections
+        </div>
+      )}
+
       {/* Floating Legend */}
       <div className="absolute bottom-3 left-3 z-10 bg-zinc-900/80 backdrop-blur-md border border-zinc-800/80 rounded-lg p-2.5 text-[11px] text-zinc-300 shadow-lg space-y-1.5 hidden md:block">
         <div className="font-semibold text-zinc-400 text-[10px] tracking-wider uppercase">Entity Types (Fill)</div>

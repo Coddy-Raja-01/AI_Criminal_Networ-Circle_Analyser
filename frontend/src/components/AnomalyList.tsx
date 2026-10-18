@@ -21,11 +21,11 @@ export const AnomalyList: React.FC<AnomalyListProps> = ({
         <div className="flex items-center gap-2">
           <AlertOctagon className="w-4 h-4 text-red-400" />
           <h2 className="text-xs font-bold uppercase tracking-wider text-zinc-200">
-            Flagged Anomalies & Evidence Anchors
+            Activity to Review
           </h2>
         </div>
         <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-red-950/70 text-red-300 border border-red-800/60">
-          {anomalies.length} Flagged
+          {anomalies.length} items
         </span>
       </div>
 
@@ -82,7 +82,7 @@ export const AnomalyList: React.FC<AnomalyListProps> = ({
                   <div className="pt-2 border-t border-zinc-800/80">
                     <div className="text-[10px] font-mono uppercase tracking-wider text-zinc-400 mb-1.5 flex items-center gap-1">
                       <LinkIcon className="w-3 h-3 text-zinc-500" />
-                      <span>Associated Evidence Records:</span>
+                      <span>Related records:</span>
                     </div>
 
                     <div className="flex flex-wrap gap-1.5">

@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  ShieldAlert,
   Search,
   UploadCloud,
   FileText,
@@ -42,8 +41,8 @@ export const Navbar: React.FC<NavbarProps> = ({
         
         {/* Brand & Mandate */}
         <div className="flex items-center gap-3">
-          <div className="relative flex items-center justify-center w-10 h-10 rounded-lg bg-red-950/60 border border-red-700/60 text-red-400 shadow-inner">
-            <ShieldAlert className="w-6 h-6 animate-pulse" />
+          <div className="relative flex items-center justify-center w-10 h-10 rounded-lg bg-emerald-950/60 border border-emerald-700/60 text-emerald-400 shadow-inner">
+            <ShieldCheck className="w-6 h-6" />
             <span className="absolute -bottom-1 -right-1 flex h-2.5 w-2.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
@@ -52,7 +51,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <div>
             <div className="flex items-center gap-2">
               <h1 className="text-base font-bold tracking-tight text-zinc-100 flex items-center gap-2">
-                Bharat SecureX AI <span className="text-xs font-mono text-zinc-400 font-normal">| SIH26189</span>
+                Bharat SecureX AI
               </h1>
               <span className="px-1.5 py-0.5 text-[10px] font-semibold tracking-wider rounded bg-red-500/10 text-red-400 border border-red-500/20 uppercase font-mono">
                 NCRB · MHA
@@ -62,7 +61,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               </span>
             </div>
             <p className="text-[11px] text-zinc-400 leading-none mt-1">
-              Secure Web-3 Criminal Network Analyser AI
+              Find connections. Follow the evidence.
             </p>
           </div>
         </div>
@@ -75,7 +74,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               type="text"
               value={searchQuery}
               onChange={(e) => onSearchChange(e.target.value)}
-              placeholder="Search target, phone (+91...), plate (DL-01...), or alias..."
+              placeholder="Search a person, phone, vehicle, or alias..."
               className="w-full pl-9 pr-3 py-1.5 text-xs bg-zinc-900/90 border border-zinc-700/80 rounded-md text-zinc-200 placeholder-zinc-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 transition-all font-mono"
             />
             {searchQuery && (
@@ -133,10 +132,10 @@ export const Navbar: React.FC<NavbarProps> = ({
             onClick={onLoadSample}
             disabled={loading}
             className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-md bg-emerald-600 hover:bg-emerald-500 text-white shadow-md shadow-emerald-950/50 transition-all border border-emerald-500 active:scale-95 disabled:opacity-50"
-            title="Load Bundled Demo Case (FIRs + CDRs + Transactions)"
+            title="Explore the included sample investigation"
           >
             <Zap className={`w-3.5 h-3.5 ${loading ? 'animate-spin' : 'text-emerald-200 fill-emerald-200'}`} />
-            <span>Load Sample Case</span>
+            <span>Try Demo Case</span>
           </button>
 
           {/* Ingest / Upload Modal Trigger */}
@@ -145,17 +144,17 @@ export const Navbar: React.FC<NavbarProps> = ({
             className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-md bg-zinc-800 hover:bg-zinc-700 text-zinc-200 border border-zinc-700 transition-all"
           >
             <UploadCloud className="w-3.5 h-3.5 text-indigo-400" />
-            <span>Ingest Intel / File</span>
+            <span>Add Files or Notes</span>
           </button>
 
           {/* Export Dossier Modal Trigger */}
           <button
             onClick={onOpenReport}
             className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-md bg-zinc-800 hover:bg-zinc-700 text-zinc-200 border border-zinc-700 transition-all"
-            title="Export Official Executive Report"
+            title="Create a report for this case"
           >
             <FileText className="w-3.5 h-3.5 text-sky-400" />
-            <span>Case Dossier</span>
+            <span>Case Report</span>
           </button>
 
           <button

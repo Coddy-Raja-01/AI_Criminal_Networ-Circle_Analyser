@@ -122,7 +122,8 @@ export default function App() {
   };
 
   return (
-    <div className="flex flex-col h-screen w-screen bg-zinc-950 text-zinc-100 overflow-hidden font-sans select-none">
+    <div className="flex min-h-screen w-screen flex-col overflow-x-hidden bg-zinc-950 font-sans text-zinc-100">
+      <div className="flex h-screen w-full flex-col overflow-hidden bg-zinc-950 font-sans text-zinc-100 select-none">
       
       {/* 1. Header / Navbar */}
       <Navbar
@@ -173,7 +174,7 @@ export default function App() {
             {loading && !caseData ? (
               <div className="flex flex-col items-center justify-center h-full gap-3 text-zinc-400 font-mono text-xs">
                 <Loader2 className="w-8 h-8 animate-spin text-indigo-400" />
-                <span>Loading intelligence relationship graph...</span>
+                <span>Preparing your connections...</span>
               </div>
             ) : (
               <GraphView
@@ -247,7 +248,7 @@ export default function App() {
                 }`}
               >
                 <Clock className="w-3.5 h-3.5" />
-                <span>Temporal Heatmap (24×7)</span>
+                <span>Activity by Time</span>
               </button>
 
               <button
@@ -259,7 +260,7 @@ export default function App() {
                 }`}
               >
                 <MapPin className="w-3.5 h-3.5 text-rose-400" />
-                <span>Geographic Hotspots</span>
+                <span>Map Hotspots</span>
               </button>
 
               <button
@@ -271,7 +272,7 @@ export default function App() {
                 }`}
               >
                 <Grid className="w-3.5 h-3.5 text-purple-400" />
-                <span>Co-Occurrence Matrix</span>
+                <span>Shared Connections</span>
               </button>
 
               <button
@@ -283,7 +284,7 @@ export default function App() {
                 }`}
               >
                 <Calendar className="w-3.5 h-3.5 text-cyan-400" />
-                <span>Intelligence Timeline</span>
+                <span>Timeline</span>
               </button>
             </div>
 
@@ -339,6 +340,22 @@ export default function App() {
         onClose={() => setIsReportOpen(false)}
         caseData={caseData}
       />
+
+      </div>
+
+      <footer className="border-t border-zinc-800 bg-zinc-950 px-4 py-4 text-center text-xs leading-relaxed text-zinc-400">
+        <p>
+          ©{' '}
+          <strong>
+            <i>
+              all rights are reserved BharatSecureX AI- Priyabrata Chakraborty &amp; team,{' '}
+              <a className="text-indigo-300 hover:text-indigo-200 underline underline-offset-2" href="mailto:prbrtchkrbrt@gmail.com">
+                prbrtchkrbrt@gmail.com
+              </a>
+            </i>
+          </strong>
+        </p>
+      </footer>
 
     </div>
   );

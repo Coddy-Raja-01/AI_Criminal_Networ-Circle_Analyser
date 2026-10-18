@@ -1,6 +1,5 @@
 import numpy as np
 from typing import List, Dict, Any
-from sklearn.ensemble import IsolationForest
 from ..models.schemas import AnomalySchema, EdgeSchema
 
 def detect_anomalies(edges: List[EdgeSchema]) -> List[AnomalySchema]:
@@ -12,6 +11,12 @@ def detect_anomalies(edges: List[EdgeSchema]) -> List[AnomalySchema]:
     4. Rule-based detection for rapid cash liquidation post high-value RTGS.
     """
     anomalies: List[AnomalySchema] = []
+
+    try:
+        from sklearn.ensemble import IsolationForest
+    except Exception as ex:
+        IsolationForest = None
+        print(f"IsolationForest unavailable; using rule-based anomaly detection: {ex}")
     
     # 1. Rule-Based: Odd-Hour Telecom Activity (01:00 AM - 04:00 AM)
     odd_hour_calls = []
@@ -106,7 +111,7 @@ def detect_anomalies(edges: List[EdgeSchema]) -> List[AnomalySchema]:
         ))
 
     # 4. Machine Learning: Isolation Forest on Numeric Edge Feature Vectors
-    if len(edges) >= 8:
+    if len(edges) >= 8 and IsolationForest is not None:
         feature_matrix = []
         edge_lookup = []
 

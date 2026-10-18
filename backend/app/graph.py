@@ -87,7 +87,14 @@ class GraphManager:
         except:
             pagerank = deg_cent
             
-        bet_cent = nx.betweenness_centrality(self.G)
+        if self.G.number_of_nodes() > 1000:
+            bet_cent = nx.betweenness_centrality(
+                self.G,
+                k=250,
+                seed=42,
+            )
+        else:
+            bet_cent = nx.betweenness_centrality(self.G)
         cl_cent = nx.closeness_centrality(self.G)
         
         try:

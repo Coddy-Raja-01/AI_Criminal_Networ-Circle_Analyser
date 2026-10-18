@@ -96,13 +96,6 @@ def startup_event():
     # Load model artifacts
     graph_manager.load_models()
     
-    # Load graph state from DB
-    db = next(get_db())
-    try:
-        refresh_graph_if_needed(db)
-    finally:
-        db.close()
-
     # Pre-cache SIH26189 demo case for sub-second startup response
     try:
         case_store.load_sample_dataset()

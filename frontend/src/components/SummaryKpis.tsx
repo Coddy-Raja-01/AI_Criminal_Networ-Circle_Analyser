@@ -28,7 +28,7 @@ export const SummaryKpis: React.FC<SummaryKpisProps> = ({
           <Users className="w-4 h-4" />
         </div>
         <div>
-          <div className="text-[11px] font-medium uppercase tracking-wider text-zinc-400">Total Entities</div>
+          <div className="text-[11px] font-medium uppercase tracking-wider text-zinc-400">Entities</div>
           <div className="text-lg font-bold text-zinc-100 font-mono leading-tight">
             {nodesCount || (summary?.total_nodes ?? 0)}
           </div>
@@ -41,7 +41,7 @@ export const SummaryKpis: React.FC<SummaryKpisProps> = ({
           <GitCommit className="w-4 h-4" />
         </div>
         <div>
-          <div className="text-[11px] font-medium uppercase tracking-wider text-zinc-400">Interactions / Edges</div>
+          <div className="text-[11px] font-medium uppercase tracking-wider text-zinc-400">Connections</div>
           <div className="text-lg font-bold text-zinc-100 font-mono leading-tight">
             {edgesCount || (summary?.total_edges ?? 0)}
           </div>
@@ -54,7 +54,7 @@ export const SummaryKpis: React.FC<SummaryKpisProps> = ({
           <Target className="w-4 h-4" />
         </div>
         <div>
-          <div className="text-[11px] font-medium uppercase tracking-wider text-zinc-400">Key Individuals</div>
+          <div className="text-[11px] font-medium uppercase tracking-wider text-zinc-400">People to Review</div>
           <div className="text-lg font-bold text-purple-300 font-mono leading-tight">
             {keyIndividualsCount}
           </div>
@@ -67,7 +67,7 @@ export const SummaryKpis: React.FC<SummaryKpisProps> = ({
           <AlertOctagon className="w-4 h-4 animate-pulse" />
         </div>
         <div>
-          <div className="text-[11px] font-medium uppercase tracking-wider text-zinc-400">Flagged Anomalies</div>
+          <div className="text-[11px] font-medium uppercase tracking-wider text-zinc-400">Activity to Review</div>
           <div className="text-lg font-bold text-red-400 font-mono leading-tight">
             {anomaliesCount || (summary?.total_anomalies ?? 0)}
           </div>
@@ -80,7 +80,7 @@ export const SummaryKpis: React.FC<SummaryKpisProps> = ({
           <Network className="w-4 h-4" />
         </div>
         <div>
-          <div className="text-[11px] font-medium uppercase tracking-wider text-zinc-400">Syndicate Cells (Louvain)</div>
+          <div className="text-[11px] font-medium uppercase tracking-wider text-zinc-400">Groups Identified</div>
           <div className="text-lg font-bold text-amber-400 font-mono leading-tight">
             {communitiesCount || (summary?.total_communities ?? 0)}
           </div>
