@@ -8,8 +8,8 @@ services:
   - type: web
     name: bharat-securex-api
     runtime: docker
-    rootDir: backend
-    dockerfilePath: ./Dockerfile
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
     plan: free
     healthCheckPath: /health
     envVars:
